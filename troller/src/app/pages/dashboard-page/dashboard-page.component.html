@@ -1,0 +1,27 @@
+<div cdkDropListGroup>
+  <app-list
+    *ngFor="let list of lists"
+    [tickets]="list.tickets"
+    [listId]="list.id"
+    [listName]="list.name"
+    (createTicket)="newTicket($event)"
+    (refresh)="getLists()"
+    (changeName)="setListIdToChange($event)"
+  ></app-list>
+  <button (click)="showListModal = true">Új lista hozzáadása</button>
+  <app-list-modal
+    *ngIf="showListModal"
+    (create)="createList($event)"
+    (closeModal)="showListModal = false"
+  ></app-list-modal>
+  <app-ticket-modal
+    *ngIf="showTicketModal"
+    (create)="createTicket($event)"
+    (closeModal)="showTicketModal = false"
+  ></app-ticket-modal>
+  <app-list-name-modal
+    (closeModal)="showListNameModal = false"
+    (change)="changeListName($event)"
+    *ngIf="showListNameModal"
+  ></app-list-name-modal>
+</div>

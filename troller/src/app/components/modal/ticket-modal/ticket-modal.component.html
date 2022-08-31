@@ -1,0 +1,41 @@
+<div>
+  <div (click)="close()"></div>
+  <div>
+    <div>
+      <h3>Új lista létrehozása</h3>
+    </div>
+    <div>
+      <div>
+        <label for="ticketName">Ticket neve:</label>
+        <input id="ticketName" [(ngModel)]="ticketName" />
+      </div>
+      <div>
+        <label for="desc">Leírás:</label>
+        <input id="desc" [(ngModel)]="desc" />
+      </div>
+      <div>
+        <label for="owner">Felelős:</label>
+        <select name="owner" id="owner" [(ngModel)]="owner">
+          <option *ngFor="let user of users" value="{{ user.userName }}">
+            {{ user.userName }}
+          </option>
+        </select>
+      </div>
+      <div>
+        <label for="deadLine">Határidő:</label>
+        <input
+          type="date"
+          id="deadLine"
+          name="deadLine"
+          value="2022-07-22"
+          min="2018-01-01"
+          max="2030-12-31"
+          [(ngModel)]="deadLine"
+        />
+      </div>
+    </div>
+    <div>
+      <button (click)="onSubmit()">Létrehoz</button>
+    </div>
+  </div>
+</div>

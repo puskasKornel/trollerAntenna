@@ -1,0 +1,14 @@
+details {
+  background-color: rebeccapurple;
+
+  summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+}

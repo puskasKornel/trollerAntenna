@@ -1,0 +1,17 @@
+<div class="example-container">
+  <h2>{{ listName }} ({{ tickets.length }})</h2>
+  <button (click)="newTicket()">Új ticket felvétele</button>
+  <button (click)="changeListName()">Lista nevének változtatása</button>
+
+  <div
+    cdkDropList
+    id="{{ 'list' + listId }}"
+    [cdkDropListData]="ticketNames"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <app-ticket *ngFor="let item of ticketNames; let i = index" [ticket]="tickets[i]">
+      {{ item }}
+    </app-ticket>
+  </div>
+</div>

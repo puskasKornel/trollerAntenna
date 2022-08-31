@@ -1,0 +1,23 @@
+<details class="example-box" cdkDrag [open]="showTicketDetails">
+  <summary>
+    <p>{{ ticket!.index + 1 }}</p>
+    <ng-content></ng-content>
+    <button (click)="showTicketDetails = !showTicketDetails">Részletek</button>
+  </summary>
+  <div>
+    <p>Felelős:</p>
+    <p>{{ ticket?.owner?.userName }}</p>
+  </div>
+  <div>
+    <p>Készítette:</p>
+    <p>{{ ticket?.creator?.userName }}</p>
+  </div>
+  <div>
+    <p>Készítés dátuma:</p>
+    <p>{{ ticket?.createdDate }}</p>
+  </div>
+  <div>
+    <p>Határidő:</p>
+    <p>{{ ticket?.deadLine }}</p>
+  </div>
+</details>

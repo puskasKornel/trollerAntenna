@@ -1,0 +1,15 @@
+<div>
+  <div (click)="close()"></div>
+  <div>
+    <div>
+      <h3>Lista nevének megváltoztatása</h3>
+    </div>
+    <div>
+      <label for="listname">Lista neve:</label>
+      <input id="listname" [(ngModel)]="listName" />
+    </div>
+    <div>
+      <button (click)="onSubmit()">Létrehoz</button>
+    </div>
+  </div>
+</div>
